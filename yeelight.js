@@ -218,6 +218,8 @@ class Yeelight extends EventEmitter
 
         //create socket
         this.socket = new net.Socket();
+        
+        this.socket.setTimeout(3000);
 
         //data response
         this.socket.on('data', this.parseResponse.bind(this));
